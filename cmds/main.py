@@ -43,7 +43,7 @@ class Main(Cog_Extension):
         data = (r.json()).pop()
         r = requests.get('https://covid-19.nchc.org.tw/api/covid19?CK=covid-19@nchc.org.tw&querydata=4002')
         death = r.json()
-        await ctx.send("新增確診+" + data[0]['a06'] + '\n' + "新增死亡+" + len(death))
+        await ctx.send("新增確診+" + data['a06'] + '\n' + "新增死亡+" + len(death))
 
     #透過全球疫情地圖API獲取指定縣市疫情數據
     @commands.command()
